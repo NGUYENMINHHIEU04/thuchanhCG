@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tinh chi so can nang</h1>
+    <br>
+    <p>Nhap can nang : </p>
+    <input type="number" name="cannang" placeholder="kg">
+    <p>Nhap chieu cao : </p>
+    <input type="number" name="chieucao" placeholder="m">
+    <button onclick="bmi()"> Submit</button>
+    <p id="result"></p>
+</body>
+<script>
+    function bmi() {
+    let w = document.getElementsByName("cannang")
+    let h = document.getElementsByName("chieucao")
+    let bmi = w / Math.pow(h ,2)
+    let result = "";
+
+   
+        if (bmi < 18)
+            result = "Underweight";
+        else if (bmi < 25.0)
+            result = "Normal";
+        else if (bmi < 30.0)
+            result = "Overweight";
+        else 
+            result = "Obese";
+        document.getElementById("result").innerHTML = "Chỉ số BMI là: " + bmi + ". Bạn " + "<b>"+ result + "</b>";
+
+    }
+</script>
+
+</html>
