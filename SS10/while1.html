@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let total = 0;
+    let num = prompt("Enter a number (-1 to stop): ");
+
+    while (num != -1) {
+        total += Number(num); // Convert the input to a number
+        num = prompt("Enter a number (-1 to stop): ");
+    }
+    alert("Total is: " + total); // Show total after loop ends
+    console.log("Total is: " + total); // Log total to console
+</script>
+
+</html>
