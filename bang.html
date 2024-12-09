@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>On tap</title>
+    <style>
+        /* tag selector */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+<div id="total"></div>
+<div id="result"></div>
+<script>
+    let Products = [];
+
+    // // function constructor
+    // function Student(code, name, email, address) {
+    //     this.code = code;
+    //     this.name = name;
+    //     this.email = email;
+    //     this.address = address;
+    // }
+
+    // class (es6)
+    class Product {
+        constructor(code, name, price, quantity) {
+            this.code = code;
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+        }
+    }
+
+    // object literal
+    Products.push({
+        code: 'SP01',
+        name: 'Phone',
+        price: '200',
+        quantity: '20',
+    });
+    Products.push(new Product('Sp02', 'Áo', '150', '20'));
+    // Product.unshift(new product('CGVN006653', 'Đinh Văn Phương', 'vanphuong2058@gmail.com', 'Online'));
+    // students.shift();
+    // students.splice(1, 1);
+
+    // Xóa phần tử có tên là Trần Anh Dũng
+    // students = students.filter(function (item) {
+    //     return item.name !== 'Trần Anh Dũng'
+    // })
+
+    function showProductList(item) {
+        return `<tr>
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td>${item.quantity}</td>
+        </tr>`;
+    }
+
+    const result = document.getElementById("result");
+    document.getElementById("total").innerHTML = `<p>Tổng số SP: ${Products.length}</p>`;
+    let table = '<table><tr><th>Mã SP</th><th>Tên SP</th><th>Giá Sp</th><th>Số lượng</th></tr>';
+    // students.forEach(function (item) {
+    //     table += `<tr>
+    //         <td>${item.name}</td>
+    //         <td>${item['email']}</td>
+    //         <td>${item['address']}</td>
+    //     </tr>`;
+    // })
+    for (let i = 0; i < Products.length; i++) {
+        table += `<tr>
+            <td>${Products[i].code}</td>
+            <td>${Products[i].name}</td>
+            <td>${Products[i].price}</td>
+            <td>${Products[i].quantity}</td>
+        </tr>`;
+    }
+    table += '</table>';
+    result.innerHTML = table;
+    console.log(Products);
+</script>
+</body>
+</html>
